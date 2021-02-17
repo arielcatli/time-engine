@@ -887,3 +887,10 @@ input {
 	width: 200px;
 }
 
+p.error {
+	color: red;
+	/*text-transform: uppercase;*/
+	font-size: 0.9rem;
+	padding: 20px 0px;
+}
+
