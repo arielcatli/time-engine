@@ -1,0 +1,242 @@
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+html {
+    width: 100vw;
+    height: 100vh;
+}
+
+body, header, nav {
+    width: 100%;
+    height: 100vh;
+}
+
+main.login {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+main.login div.display-logo {
+    width: 50vw;
+    height: 100%;
+    background-color: dodgerblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main.login div.display-logo h1 {
+    font-size: 4rem;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 10px;
+}
+
+main.login div.display-logo p.subtitle {
+    color: white;
+    font-size: 1.5rem;
+}
+
+main.login div.display-logo p.register-link {
+    color: white;
+    font-size: 1rem;
+    padding: 10px;
+}
+
+p.register-link a {
+    text-decoration: none;
+    color: gold;
+    cursor: pointer;
+}
+
+main.login div.display-logo .logo {
+    width: 50%;
+}
+
+main.login div.login-form-container {
+    width: 50vw;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    width: 80%;
+    background-color: skyblue;
+    height: 300px;
+    padding: 30px;
+}
+
+.login-form label {
+    font-size: 1rem;
+    color: gray;
+    text-transform: uppercase;
+    padding: 10px 0px;
+}
+
+.login-form input {
+    border: 2px solid deepskyblue;
+    height: 3rem;
+    padding: 10px;
+    outline: none;
+    margin-bottom: 20px;
+    border-radius: 20px;
+}
+
+button.login {
+    background-color: dodgerblue;
+    height: 3rem;
+    padding: 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: white;
+    text-transform: uppercase;
+    border-radius: 20px;
+}
+
+main.dashboard {
+    width: 100%;
+    background-color: blue;
+    display: flex;
+    flex-direction: column;
+}
+
+div.clock-control, div.information {
+    padding: 30px;
+}
+
+
+div.clock-control {
+    background-color: dodgerblue;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+p.clock {
+    font-size: 8rem;
+    font-weight: bold;
+    color: white;
+}
+
+p.date {
+    font-size: 1.5rem;
+    color: white;
+    padding: 10px;
+}
+
+.clock-control button, div.information button {
+    width: 200px;
+    margin-bottom: 20px;
+    height: 30px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: goldenrod;
+    color: white;
+    text-transform: uppercase;
+    border-radius: 20px;
+}
+
+.clock-control button:hover {
+    background-color: cornflowerblue;
+}
+
+div.information {
+    background-color: #064175;
+    width: 50%;
+}
+
+div.profile {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    color: white;
+}
+
+div.information h1 {
+    padding: 20px 0px;
+}
+
+
+
+div.information p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+div.information p.label {
+    font-size: 0.8rem;
+    margin: 0px;
+}
+
+p.status-in {
+    color: yellowgreen;
+}
+
+p.status-out {
+    color: lightslategray;
+}
+
+div.time-history {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    background-color: white;
+}
+
+div.time-history h1 {
+    color: dodgerblue;
+}
+
+.records-container {
+    padding: 20px;
+}
+
+div.record {
+    padding: 10px;
+}
+
+span.record-in {
+    color: white;
+    background-color: green;
+    padding: 5px;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+
+span.record-out {
+    color: white;
+    background-color: gray;
+    padding: 5px;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+
+span.employee {
+    color: white;
+    background-color: dodgerblue;
+    padding: 5px;
+    margin-right: 10px;
+    border-radius: 10px;
+}
