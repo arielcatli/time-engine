@@ -23,8 +23,8 @@
 //    Get personal records
 
 $user_id = $profile['id'];
-$SQL_GET_LOGIN_HISTORY = "SELECT * FROM time_engine.time_records WHERE employee_id = '$user_id'";
-$SQL_GET_LOGIN_HISTORY_ADMIN = "SELECT time_engine.employee.first_name, time_engine.employee.middle_name, time_engine.employee.last_name, time_engine.time_records.timed_at, time_engine.time_records.time_type, time_engine.employee.role FROM time_engine.time_records INNER JOIN time_engine.employee ON time_engine.employee.id = time_engine.time_records.employee_id";
+$SQL_GET_LOGIN_HISTORY = "SELECT * FROM time_engine.time_records WHERE employee_id = '$user_id' ORDER BY id DESC";
+$SQL_GET_LOGIN_HISTORY_ADMIN = "SELECT time_engine.employee.first_name, time_engine.employee.middle_name, time_engine.employee.last_name, time_engine.time_records.timed_at, time_engine.time_records.time_type, time_engine.employee.role FROM time_engine.time_records INNER JOIN time_engine.employee ON time_engine.employee.id = time_engine.time_records.employee_id ORDER BY time_engine.time_records.id DESC";
 
 $results_records = $connection->query($profile['role'] == 'administrator' ? $SQL_GET_LOGIN_HISTORY_ADMIN : $SQL_GET_LOGIN_HISTORY);
 print($connection->error);
@@ -169,7 +169,7 @@ while($row = $timed_in_results->fetch_assoc()) {
                 <h2>All Records</h2>
                 <?php foreach ($records as $time_record): ?>
                     <div class="record">
-                        <p class="record-time"><?= ($profile['role'] == 'administrator')? "<span class='employee'>" . $time_record['first_name'] . " " . $time_record['middle_name'] . " " . $time_record['last_name'] . "</span>" : "" ?><?= $time_record['time_type'] == 'in' ? "<span class='record-in'>TIME IN</span>":"<span class='record-out'>TIME OUT</span>"?>15:04 February 18, 2020</p>
+                        <p class="record-time"><?= ($profile['role'] == 'administrator')? "<span class='employee'>" . $time_record['first_name'] . " " . $time_record['middle_name'] . " " . $time_record['last_name'] . "</span>" : "" ?><?= $time_record['time_type'] == 'in' ? "<span class='record-in'>TIME IN</span>":"<span class='record-out'>TIME OUT</span>"?><?=$time_record['timed_at']?></p>
                     </div>
                 <?php endforeach; ?>
             </div>

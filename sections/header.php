@@ -10,6 +10,6 @@
 
     <link rel="stylesheet" href="/employee/main.css">
 
-	<title>Time Engine | Login</title>
+	<title>Time Engine</title>
 </head>
 <body>
