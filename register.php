@@ -101,7 +101,7 @@
 			<li id="li_1" >
 				<label class="description" for="element_1">Personal Information </label>
 				<span>
-			<input id="first_name" name="first_name" class="element text" maxlength="255" size="14" value=""/>
+			<input id="first_name" name="first_name" class="element text" maxlength="255" size="14" value="" required/>
 			<label class="tam">First Name</label>
 		</span>
 
@@ -112,14 +112,14 @@
 		</span>
 
 				<span>
-			<input id="last_name" name="last_name" class="element text" maxlength="255" size="14" value=""/>
+			<input id="last_name" name="last_name" class="element text" maxlength="255" size="14" value="" required/>
 			<label class="tam">Last Name</label>
 		</span>
 
 			</li>		<li id="li_2" >
 				<label class="description" for="element_2">Email </label>
 				<div>
-					<input id="usernam" name="username" class="element text medium" type="email" maxlength="255" value=""/>
+					<input id="usernam" name="username" class="element text medium" type="email" maxlength="255" value="" required/>
 				</div>
 			</li>		<li id="li_3" >
 				<label class="description" for="element_3">Address </label>
@@ -205,13 +205,13 @@
 			<li id="li_1" >
 				<label class="description" for="element_1">Password</label>
 				<span>
-			<input id="new_password" name="new_password" class="element text" maxlength="255" size="14" value="" type="password"/>
+			<input id="new_password" name="new_password" class="element text" maxlength="255" size="14" value="" type="password" required/>
 		<label class="tam">Password</label>
 
 		</span>
 
 				<span>
-			<input id="confirm_password" name="confirm_password" class="element text" maxlength="255" size="14" value="" type="password"/>
+			<input id="confirm_password" name="confirm_password" class="element text" maxlength="255" size="14" value="" type="password" required/>
 			<label class="tam">Confirm Password</label>
 		</span>
 

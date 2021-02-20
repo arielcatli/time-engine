@@ -118,7 +118,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 			<li id="li_1" >
 				<label class="description" for="element_1">Personal Information </label>
 				<span>
-			<input id="first_name" name="first_name" class="element text" maxlength="255" size="14"  value="<?=$profile['first_name']?>" />
+			<input id="first_name" name="first_name" class="element text" maxlength="255" size="14"  value="<?=$profile['first_name']?>" required/>
 			<label class="tam">First Name</label>
 		</span>
 
@@ -129,7 +129,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 		</span>
 
 				<span>
-			<input id="last_name" name="last_name" class="element text" maxlength="255" size="14"  value="<?=$profile['last_name']?>" />
+			<input id="last_name" name="last_name" class="element text" maxlength="255" size="14"  value="<?=$profile['last_name']?>" required/>
 			<label class="tam">Last Name</label>
 		</span>
 

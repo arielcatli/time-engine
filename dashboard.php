@@ -42,6 +42,19 @@ while($row = $timed_in_results->fetch_assoc()) {
     $in_people[] = $row;
 }
 
+// Get login history
+
+$user_id = $profile['id'];
+$SQL_GET_LOGIN_HISTORY = "SELECT * FROM time_engine.login_records WHERE employee_id = '$user_id' ORDER BY logged_in_at DESC";
+//$SQL_GET_LOGIN_HISTORY_ADMIN = "SELECT dhvsu_app.user.first_name, dhvsu_app.user.middle_name, dhvsu_app.user.last_name, dhvsu_app.login_history.logged_in, dhvsu_app.user.role FROM dhvsu_app.login_history INNER JOIN dhvsu_app.user ON dhvsu_app.user.id = dhvsu_app.login_history.user_id";
+
+$results_records = $connection->query($SQL_GET_LOGIN_HISTORY);
+print($connection->error);
+$login_records = array();
+while($row = $results_records->fetch_assoc()) {
+	$login_records[] = $row;
+}
+
 
     if($_SERVER["REQUEST_METHOD"] == "POST") {
         if(isset($_POST['button-log-out'])) {
@@ -165,6 +178,15 @@ while($row = $timed_in_results->fetch_assoc()) {
 	<div class="time-history">
 		<h1>Records</h1>
 		<div class="records-container">
+            <div class="login-history">
+                <h2>Your Login History</h2>
+                <?php foreach($login_records as $rec): ?>
+                    <div class="login-record-box">
+                        <p class="login-mark">[Logged-in]</p>
+                        <p class="logged-in-time"><?=$rec['logged_in_at']?></p>
+                    </div>
+                <?php endforeach; ?>
+            </div>
             <div class="all-records">
                 <h2>All Records</h2>
                 <?php foreach ($records as $time_record): ?>

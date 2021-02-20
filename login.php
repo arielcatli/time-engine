@@ -22,8 +22,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 		$_SESSION['loggedin'] = true;
 		$_SESSION['username'] = $username;
 
-        header('Location: /employee/dashboard.php');
-        exit();
+		$profile_id = $profile['id'];
+		$now = new DateTime();
+		$now->setTimezone(new DateTimeZone('Asia/Taipei'));
+		$logged_in = $now->format('Y-m-d H:i:s');
+		$SQL_ADD_TO_LOGIN_HISTORY = "INSERT INTO time_engine.login_records (employee_id, logged_in_at) VALUES ('$profile_id', '$logged_in')";
+		$write_result = $connection->query($SQL_ADD_TO_LOGIN_HISTORY);
+
+		if($write_result) {
+			header('Location: /employee/dashboard.php');
+			exit();
+		} else {
+			header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error', true, 500);
+			exit();
+		}
 	}
 	else {
 		$login_error = 'Invalid email or password.';

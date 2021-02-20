@@ -268,3 +268,18 @@ button.log-out {
 .presents {
     padding: 0px 50px;
 }
+
+.login-record-box {
+    padding: 5px;
+}
+
+div.login-history {
+    margin-right: 50px;
+}
+
+p.login-mark {
+    color: dodgerblue;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    padding-top: 10px;
+}
