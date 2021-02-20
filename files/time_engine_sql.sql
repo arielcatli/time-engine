@@ -33,5 +33,12 @@ CREATE TABLE IF NOT EXISTS time_records(
     FOREIGN KEY (employee_id) REFERENCES employee(id)
 ); 
 
+CREATE TABLE IF NOT EXISTS login_records(
+	id int(10) AUTO_INCREMENT PRIMARY KEY,
+    employee_id int(10) NOT NULL,
+    logged_in_at datetime NOT NULL,
+    FOREIGN KEY (employee_id) REFERENCES employee(id)
+); 
+
 INSERT into employee (username, password, first_name, middle_name, last_name, address, barangay, city, province, zip, gender, phone, role, birth_day, birth_month, birth_year, time_status)
 VALUES ('admin_login@timeengine.com', 'root', 'Jessica', 'Morning', 'Day', 'P. Sherman', 'Walloughby Oakwoods', 'Taguig', 'Metro Manila', '77842', 'F', '+639741154478', 'administrator', '07', '14', '1985', 'out');
